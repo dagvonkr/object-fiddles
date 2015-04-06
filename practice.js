@@ -1,11 +1,15 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 
-//Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
+//Create an object called me. Give it a key of name with the value being your name, 
+//and another key of age with the value being your age. Then alert your name using dot notation.
 
-  //Code here
+var me = {
+  name: 'Dag',
+  age: '28'
+}
 
-
+alert(me.name);
 
 
 //NEXT PROBLEM
@@ -13,22 +17,43 @@
 
 
 
-//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
+//Make a 'favoriteThings' object that contains the following keys: band, food, 
+//person, book, movie, holiday. Have the values to those keys be your favorite 
+//thing in that category.
 
-  //Code here
-
-
-//After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
-
-  //Code here
-
-
-//Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
-
-  //Code here
-
+var favoriteThings = {
+  band: 'The Mars Volta',
+  food: 'Kebab',
+  person: 'Herman',
+  book: 'Siddartha',
+  movie: 'Fire Walk With Me',
+  holiday: 'Italy'
+};
 
 
+//After you've made your object, add another key named 'car' with the value being 
+//your favorite car and then another key named 'brand' with the value being your 
+//favorite brand.
+
+favoriteThings.car = 'Audi';
+favoriteThings.brand = 'Apple';
+
+
+
+//Now change the food key in your favoriteThings object to be 'Lettuce' and change 
+//the book key in your favoriteThings object to be '50 Shades of Gray'.
+
+favoriteThings.food = 'Lettuce';
+favoriteThings.book = '50 Shades of Gray';
+
+
+// Bare for å sjekke at alle er der:
+for (var items in favoriteThings) {
+  console.log(items);
+}
+
+console.log(favoriteThings.food);
+console.log(favoriteThings.book);
 
 //NEXT PROBLEM
 
@@ -42,33 +67,52 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
-  //Code here
+var backPack = {};
+
+var item = 'firstPocket';
+
+backPack.firstPocket = ['chapstick'];
+
+backPack.color = 'black';
+
+
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+console.log(backPack.firstPocket);
 
 
-
+console.log(item);
 
 //NEXT PROBLEM
 
 
 
 
-//Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
+//Create another 'me' object with the following properties name, age, height, gender, 
+//married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+var me = {
+  name: 'Dag',
+  age: 28,
+  height: 6,
+  gender: 'male',
+  married: false,
+  eyeColor: 'green',
+  hairColor: 'blonde'
+}
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+for (var i in me) {
+  console.log(i + ' --> ' + me[i]);
+}
 
 
 
@@ -80,11 +124,19 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+ var album = {
+  youTellMeLies: '2:30',
+  provoRockCity: '5:56',
+  prettiestGirlInOslo: '3:45',
+  dontCareWhoYouAre: '2:58',
+  hvaFaenA: '2:30'
+ }
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+ for (var i in album) {
+  alert(i + ' ' + album[i]);
+ }
 
 
 
@@ -94,13 +146,28 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 
 
-//Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
+//Create an object called states that has 5 US states as properties with the values 
+//being their population (doesn't have to be accurate).
 
-  //Code Here
+var states = {
+  newYork: 19378102,
+  utah: 2763885,
+  california: 37253956,
+  oklahoma: 3751351,
+  minnesota: 5303925
+};
+
+
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
+for (var key in states) {
+  if (states[key] > 30000000) {
+    alert(states);
+  }
+}
+
+//Can't alert the name, just Object, Object or the ket value. 
 
 
 
@@ -121,11 +188,23 @@ var user = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
+for (var key in user) {
+  if (!user[key]) {
+    console.log(key);
+    console.log(user[key]);
+    console.log('key: ', key);
+    delete user[key];
+  }
+}
+console.log(user);
+console.log(key + ' --> ' + user[key]);
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
+user.name = 'Dag';
+user.username = 'dagvonkr';
+
+console.log(user);
 
 
 
@@ -149,11 +228,14 @@ var user = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+user.name = 'Tyler S. McGinnis';
+user.email = 'tyler.mcginnis@devmounta.in';
+
+
 
 //Now call the sayName method that's on the user object which will alert the users email
 
-  //Code Here
+user.sayName();
 
 
 
@@ -161,23 +243,28 @@ var user = {
 //NEXT PROBLEM
 
 
-
-
 //Create an empty object called methodCollection.
 
-  //Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
+methodCollection.alertHello = function() {
+  alert('Hello');
+};
+methodCollection.logHello = function() {
+  console.log('Hello');
+}
+
 
 //Now call your alertHello and logHello methods.
 
-  //Code Here
+methodCollection.alertHello();
+methodCollection.logHello();
 
-
+// Kom igjen a, gi meg noe å bryne meg på...
 
 
 //NEXT PROBLEM
@@ -215,12 +302,25 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+
+console.log(devMountainEmployees.length);
+
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+  }
+}
+
+console.log(devMountainEmployees);
+
 
 
 
@@ -255,27 +355,46 @@ var data = [
     }
 ];
 
-
-
 /*A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects)
 of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
-
+var users = [];
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
-
 //include this as one of the objects in your array.
 var user1 = {
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-}
+};
 
-//Your Code Here
+var user2 = {
+    name: 'Dag Bunkholt',
+    email: 'dagvkb@gmail.com',
+    password: 'windM1ll',
+    username: 'snoopDag'
+};
+var user3 = {
+    name: 'Benjamin Helstad',
+    email: 'bhelstad@gmail.com',
+    password: 'dritaa',
+    username: 'bhelstad'
+};
+var user4 = {
+    name: 'Torgeir Beyer',
+    email: 'torgeir.beyer@gmail.com',
+    password: 'blinderergoy',
+    username: 'ToggaFresh'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
+users.push(user4);
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -285,9 +404,13 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular indice he's located in, delete him from the array.*/
 
-  //Code Here
-
+for (var i = 0; i < users.length; i++) {
+  if(users[i].email === 'tylermcginnis33@gmail.com') {
+      delete users[i];
+  }
+}
 //The activity we just did is very much how data works in 'the real world'.
 
+console.log(users);
 
 
